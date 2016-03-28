@@ -5,10 +5,11 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="infinity.png" />
         <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
-        <script type="text/javascript" src="main.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body onload="loading()">
+    <body onload="loading()" >
         <div class="header">
+            <div class="square" id="js-square" style="color:#fff; text-align: center; line-height: 80px; font-size: 20px;" onclick="burstOPen()"><i class="material-icons" style="line-height: 60px; font-size: 35px;">&#xEB3D</i></div>
             <h1 id="headText">infinity</h1>
             <object id="headLogo" data="infinity.svg" type="image/svg+xml">
                 <img id="headLogoB" src="infinity.png" />
@@ -28,5 +29,7 @@
         <div class="other">
             <h2>more</h2>
         </div>
+        <script src="mo.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
