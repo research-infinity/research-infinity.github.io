@@ -144,20 +144,6 @@ i:hover::after {
     content: "\E5C8";
 }
 
-/*.ballClickBox {
-    width: 60px;
-    height: 60px;
-    background: #181713;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    margin-left: -25px;
-    margin-top: -25px;
-    transform-origin: center bottom;
-    border-radius: 50%;
-}*/
-
-
 /*.other {
     position: absolute;
     top: 100%;
