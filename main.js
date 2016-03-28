@@ -12,18 +12,14 @@ function loading() {
             scaleY = 1 - 2*squashProgress;
 
         square.style.transform =
-          'translateY(' + 320*translateProgress + '%) '+
+          'translateY(' + 29*translateProgress + 'vh) '+
           'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
 
       }
     }).run();
-
-
-
-
 }
 
-function burstOPen() {
+/*function mainOpen() {
     document.querySelector('#headLogo').style.bottom = 'calc(50% - 64.75px)';
     document.querySelector('#pillarI').style.top = 'calc(50% + 75px)';
     document.querySelector('#pillar0').style.top = 'calc(50% - 225px)';
@@ -31,4 +27,4 @@ function burstOPen() {
     document.querySelector('#N-alefNum').style.top = 'calc(50% - 22.5px)';
     document.querySelector('#O-alefNum').style.top = 'calc(50% - 22.5px)';
     document.querySelector('#headText').style.lineHeight = '55vh';
-}
+}*/
