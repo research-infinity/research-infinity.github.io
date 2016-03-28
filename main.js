@@ -12,7 +12,7 @@ function loading() {
             scaleY = 1 - 2*squashProgress;
 
         square.style.transform =
-          'translateY(' + 29*translateProgress + 'vh) '+
+          'translateY(' + 45*translateProgress + 'vh) '+
           'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
 
       }
