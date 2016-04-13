@@ -84,9 +84,9 @@ function checkCookie() {
         if (user != "" && user != null) {
             setCookie("username", user, 30);
         }
-        /*else {
+        else {
             console.log('Please type your name');
             checkCookie();
-        }*/
+        }
     }
 }
