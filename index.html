@@ -13,7 +13,7 @@
                 <div class="square" id="js-square" style="text-align: center; line-height: 80px; font-size: 20px;" onclick="burstOPen()"><i class="material-icons" style="line-height: 60px; font-size: 35px;">&#xEB3D</i></div>
                 <h1 id="headText">infinity</h1>
             </div>
-            <object id="headLogo" data="infinity.svg" type="image/svg+xml">
+            <!--<object id="headLogo" data="infinity.svg" type="image/svg+xml">
                 <img id="headLogoB" src="infinity.png" />
             </object>
             <object id="pillar0" data="pillarA0.svg" type="image/svg+xml">
@@ -26,12 +26,36 @@
                 <img id="pillar1B" src="pillarA.png" />
             </object>
             <h2 id="N-alefNum">0</h2>
-            <h2 id="O-alefNum">1</h2>
+            <h2 id="O-alefNum">1</h2>-->
+            <div class="namePopUp">
+                <form id="name" action="index.html" method="post" autocomplete="off">
+                    <ul>
+                        <li id="firstName">
+                            <label for="q1">Fist Name:</label>
+                            <input id="firstNameText" type="text" name="q1" placeholder="First Name">
+                        </li>
+                        <li id="lastName">
+                            <label for="q2">Last Name:</label>
+                            <input id="lastNameText" type="email" name="q2" placeholder="Last Name">
+                        </li>
+                        <li id="ID">
+                            <label for="q3">Student ID:</label>
+                            <input id="IDText" type="number" name="q3" placeholder="Ex. 11245">
+                        </li>
+                        <li id="submitForm">
+                            <input type="submit" disabled>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!--<div class="other">
+                <h2>more</h2>
+            </div>-->
+            <div class="history" style="opacity: 0">
+                <h1>The History of Infinity</h1>
+            </div>
+            <script src="mo.js"></script>
+            <script src="main.js"></script>
         </div>
-        <div class="other">
-            <h2>more</h2>
-        </div>
-        <script src="mo.js"></script>
-        <script src="main.js"></script>
     </body>
 </html>

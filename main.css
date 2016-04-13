@@ -7,8 +7,14 @@
 }
 
 body {
-    overflow: hidden;
+    /*overflow: scroll;*/
 }
+
+/*
+------------------------------------------------------------------
+Start Page
+------------------------------------------------------------------
+*/
 
 .header {
     position: fixed;
@@ -23,6 +29,15 @@ body {
     cursor: default;
 }
 
+#headText {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 5em;
+    z-index: 1;
+}
+
 #mainPage {
     transition: background 1500ms 1000ms ease-out;
 }
@@ -30,79 +45,6 @@ body {
 #headPage {
     opacity: 1;
     transition: opacity 1000ms ease;
-}
-
-#headText {
-    position: relative;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
-    line-height: 100vh;
-    font-size: 5em;
-    z-index: 1;
-}
-
-#pillar0 {
-    position: absolute;
-    top: 100%;
-    right: calc(50% - 153.75px);
-    margin: 0 375px 0 0;
-    height: 594px;
-    width: 497.25px;
-    transition: top 2500ms ease;
-}
-
-#pillar1 {
-    position: absolute;
-    top: 100%;
-    left: calc(50% - 153.75px);
-    margin: 0 0 0 375px;
-    height: 594px;
-    width: 497.25px;
-    transition: top 2500ms ease;
-}
-
-#pillarI {
-    position: absolute;
-    top: 100%;
-    left: calc(50% - 248.625px);
-    height: 375px;
-    width: 497.25px;
-    transition: top 2500ms ease;
-}
-
-#N-alefNum {
-    position: absolute;
-    top: 129%;
-    left: calc(50% - 453.75px);
-    color: #fff;
-    z-index: 1;
-    transition: top 2500ms ease;
-}
-
-#O-alefNum {
-    position: absolute;
-    top: 129%;
-    right: calc(50% - 498.75px);
-    color: #fff;
-    z-index: 1;
-    transition: top 2500ms ease;
-}
-
-#headLogo {
-    position: absolute;
-    width: 307.5px;
-    height: 129.75px;
-    bottom: 100%;
-    left: calc(50% - 153.75px);
-    transition: bottom 2500ms ease;
-}
-
-#headLogoB {
-    position: absolute;
-    width: 307.5px;
-    height: 307.5px;
-    top: calc(50% - 153.75px);
-    left: calc(50% - 153.75px);
 }
 
 .square {
@@ -144,36 +86,26 @@ i:hover::after {
     content: "\E5C8";
 }
 
-/*.other {
-    position: absolute;
-    top: 100%;
+/*
+------------------------------------------------------------------
+The History of Infinity
+------------------------------------------------------------------
+*/
+
+.history {
+    position: fixed;
+    top: 0;
     height: 100vh;
     width: 100%;
-    background: rgba(41, 9, 51, 1);
-    z-index: 1;
-    box-shadow: 0 -5px 200px 100px rgba(41, 9, 51, 1);
-}*/
+    overflow: scroll;
+    transition: opacity 1000ms 2000ms ease;
+}
 
-/*@keyframes bgChange {
-    0% {
-        background-color: #37368d;
-    }
-    16.67% {
-        background-color: #aef0e1;
-    }
-    33.33% {
-        background-color: #c61d32;
-    }
-    50% {
-        background-color: #f8e71c;
-    }
-    66.67% {
-        background-color: #2f5205;
-    }
-    83.33% {
-        background-color: #b8e986;
-    }
-    100% {
-        background-color: #37368d;
-    }
-}*/
+.history h1 {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    line-height: 40vh;
+    font-size: 4.5em;
+    z-index: 1;
+}

@@ -17,17 +17,9 @@ function loading() {
 
       }
     }).run();
-}
 
-/*function mainOpen() {
-    document.querySelector('#headLogo').style.bottom = 'calc(50% - 64.75px)';
-    document.querySelector('#pillarI').style.top = 'calc(50% + 75px)';
-    document.querySelector('#pillar0').style.top = 'calc(50% - 225px)';
-    document.querySelector('#pillar1').style.top = 'calc(50% - 225px)';
-    document.querySelector('#N-alefNum').style.top = 'calc(50% - 22.5px)';
-    document.querySelector('#O-alefNum').style.top = 'calc(50% - 22.5px)';
-    document.querySelector('#headText').style.lineHeight = '55vh';
-}*/
+    checkCookie();
+}
 
 function burstOPen() {
     var page = document.querySelector('#headPage'),
@@ -54,5 +46,47 @@ function burstOPen() {
             page.style.opacity = '0';
         }
     }).run();
-    pageBack.style.background = '#c61d32';
+
+    pageBack.style.background = '#d94255';
+    document.querySelector('.history').style.opacity = '1';
+}
+
+function nameFormOPen() {
+
+}
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        console.log("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:","");
+        if (user != "" && user != null) {
+            setCookie("username", user, 30);
+        }
+        /*else {
+            console.log('Please type your name');
+            checkCookie();
+        }*/
+    }
 }
