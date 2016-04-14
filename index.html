@@ -28,25 +28,21 @@
             <h2 id="N-alefNum">0</h2>
             <h2 id="O-alefNum">1</h2>-->
             <div class="namePopUp">
-                <form id="name" action="index.html" method="post" autocomplete="off">
-                    <ul>
-                        <li id="firstName">
-                            <label for="q1">Fist Name:</label>
-                            <input id="firstNameText" type="text" name="q1" placeholder="First Name">
-                        </li>
-                        <li id="lastName">
-                            <label for="q2">Last Name:</label>
-                            <input id="lastNameText" type="email" name="q2" placeholder="Last Name">
-                        </li>
-                        <li id="ID">
-                            <label for="q3">Student ID:</label>
-                            <input id="IDText" type="number" name="q3" placeholder="Ex. 11245">
-                        </li>
-                        <li id="submitForm">
-                            <input type="submit" disabled>
-                        </li>
-                    </ul>
-                </form>
+                <h2 id="formTitle">fill in your info</h2>
+                <ul class="form">
+                    <li id="firstName">
+                        <input id="firstNameText" type="text" name="q1" placeholder="First Name">
+                    </li>
+                    <li id="lastName">
+                        <input id="lastNameText" type="text" name="q2" placeholder="Last Name">
+                    </li>
+                    <li id="ID">
+                        <input id="IDText" type="number" min="10234" max="187051" name="q3" placeholder="ID #">
+                    </li>
+                    <li id="submitForm">
+                        <input class="material-icons" id="submitF1" type="button" value="&#xE877" onclick="nameFormCLose();">
+                    </li>
+                </ul>
             </div>
             <!--<div class="other">
                 <h2>more</h2>

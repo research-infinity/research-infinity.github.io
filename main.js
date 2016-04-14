@@ -17,8 +17,6 @@ function loading() {
 
       }
     }).run();
-
-    checkCookie();
 }
 
 function burstOPen() {
@@ -49,10 +47,46 @@ function burstOPen() {
 
     pageBack.style.background = '#d94255';
     document.querySelector('.history').style.opacity = '1';
+    checkCookie();
 }
 
-function nameFormOPen() {
+var nameForm = document.querySelector('.namePopUp');
 
+function nameFormOPen() {
+    nameForm.style.top = 'calc(50% - 200px)';
+}
+
+var fname;
+var lname;
+var idname;
+var completeInfo;
+
+function nameFormCLose() {
+    var moveOn = 3;
+    fname = document.querySelector('#firstNameText');
+    lname = document.querySelector('#lastNameText');
+    idname = document.querySelector('#IDText');
+
+    if(idname.value < 10234 || idname.value > 187051) {
+        idname.setAttribute('required' , 'required');
+        moveOn--;
+    }
+
+    if(fname.value == '') {
+        fname.setAttribute('required' , 'required');
+        moveOn--;
+    }
+
+    if(lname.value == '') {
+        lname.setAttribute('required' , 'required');
+        moveOn--;
+    }
+
+    if(moveOn == 3) {
+        completeInfo = lname.value + ", " + fname.value + " (" + idname.value + ")";
+        setCookie("username", completeInfo, 30);
+        nameForm.style.top = '200%';
+    }
 }
 
 function setCookie(cname,cvalue,exdays) {
@@ -76,17 +110,8 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-    var user=getCookie("username");
-    if (user != "") {
-        console.log("Welcome again " + user);
-    } else {
-        user = prompt("Please enter your name:","");
-        if (user != "" && user != null) {
-            setCookie("username", user, 30);
-        }
-        else {
-            console.log('Please type your name');
-            checkCookie();
-        }
+    var user = getCookie("username");
+    if (user == "") {
+        nameFormOPen();
     }
 }

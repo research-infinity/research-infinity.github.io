@@ -86,6 +86,59 @@ i:hover::after {
     content: "\E5C8";
 }
 
+.namePopUp {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 175px);
+    width: 350px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 7px 10px 5px rgba(0, 0, 0, 0.23);
+    transition: top 2000ms 2000ms;
+}
+
+.form {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.form li {
+    margin: 15px;
+}
+
+.form input {
+    height: 20px;
+    width: 200px;
+    padding: 5px;
+    border: 2px solid #2d2d2d;
+    border-radius: 5px;
+    outline: none;
+}
+
+#formTitle {
+    text-transform: lowercase;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: -60px;
+}
+
+.form #submitF1 {
+    height: 50px;
+    width: 50px;
+    border: none;
+    color: #fff;
+    background: #2d2d2d;
+    border-radius: 50%;
+}
+
+input:focus {
+    outline: none;
+}
+
 /*
 ------------------------------------------------------------------
 The History of Infinity
