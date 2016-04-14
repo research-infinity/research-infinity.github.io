@@ -31,13 +31,13 @@
                 <h2 id="formTitle">fill in your info</h2>
                 <ul class="form">
                     <li id="firstName">
-                        <input id="firstNameText" type="text" name="q1" placeholder="First Name">
+                        <input id="firstNameText" type="text" name="q1" placeholder="First Name" onkeypress="inputSwitch(event, nameInputs)">
                     </li>
                     <li id="lastName">
-                        <input id="lastNameText" type="text" name="q2" placeholder="Last Name">
+                        <input id="lastNameText" type="text" name="q2" placeholder="Last Name" onkeypress="inputSwitch(event, nameInputs)">
                     </li>
                     <li id="ID">
-                        <input id="IDText" type="number" min="10234" max="187051" name="q3" placeholder="ID #">
+                        <input id="IDText" type="number" min="10234" max="187051" name="q3" placeholder="ID #" onkeypress="nameFormEnd(event)">
                     </li>
                     <li id="submitForm">
                         <button class="material-icons" id="submitF1" onclick="nameFormCLose();">&#xE154</button>
@@ -50,8 +50,10 @@
             <div class="history" style="opacity: 0">
                 <h1>The History of Infinity</h1>
             </div>
-            <script src="mo.js"></script>
-            <script src="main.js"></script>
+            <script src="js/mo.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/cookies.js"></script>
+            <script src="js/forms.js"></script>
         </div>
     </body>
 </html>
