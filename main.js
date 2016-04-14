@@ -36,6 +36,26 @@ function burstOPen() {
     checkCookie();
 }
 
+function btnResponse(btnName, bg, icon) {
+    btnName.style.background = bg;
+
+    var squashCurve = mojs.easing.path('M0,100 C7.81150159,99.8552004 10.5,124.956388 10.5,124.956388 C90.1283952,80.031273 90.5289739,104.813463 90.5289739,104.813463 C90.5549281,81.0074753 92.3999997,100.031718 92.4,100.031719 C92.4000003,100.031719 93.5948603,107.323512 94.3116055,100.031719 C95.2672636,99.9339509 95.7,103.132754 95.7,103.132754 C95.7175753,87.0120996 97.0999998,99.9342524 97.1,99.9342527 L100,100');
+
+    new mojs.Tween({
+      duration: 200,
+      onUpdate: function (progress) {
+        var squashProgress = squashCurve(progress),
+            scaleX = 1 + 2*squashProgress,
+            scaleY = 1 - 2*squashProgress;
+
+        btnName.style.transform = 'scaleX(' + scaleX + ') ' + 'scaleY(' + scaleY + ')';
+
+      }
+    }).run();
+
+    btnName.innerHTML = icon;
+}
+
 var nameForm = document.querySelector('.namePopUp');
 var submitF1 = document.querySelector('#submitF1');
 
@@ -72,12 +92,10 @@ function nameFormCLose() {
     if(moveOn == 3) {
         completeInfo = lname.value + ", " + fname.value + " (" + idname.value + ")";
         setCookie("username", completeInfo, 30);
-        submitF1.style.background = '#32b948';
-        submitF1.innerHTML = '&#xE877';
+        btnResponse(submitF1, '#32b948', '&#xE877');
         nameForm.style.top = '200%';
     } else {
-        submitF1.style.background = '#f63f3f';
-        submitF1.innerHTML = '&#xE000';
+        btnResponse(submitF1, '#f63f3f', '&#xE000');
     }
 }
 
