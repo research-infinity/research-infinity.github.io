@@ -97,19 +97,15 @@ footer {
     bottom: 20px;
     right: 20px;
     z-index: 10000;
+    color: #fff;
 }
 
 footer a {
-    color: #fff;
+    color: inherit;;
     text-decoration: none;
     margin-right: 20px;
     font-size: 1.2ch;
     font-weight: 300;
-    transition: opacity 60000ms;
-}
-
-footer a:hover {
-    opacity: 0;
 }
 
 footer #legal:hover::after {
@@ -132,13 +128,16 @@ footer #cookies:hover::after {
     border-radius: 4px;
 }
 
+/*
+
 footer #ahgomes::before {
     content: attr(href);
     position: fixed;
-    top: 30px;
+    top: 20px;
     right: -100px;
-    background: rgba(225, 225, 225, 0.2);
-    font-size: 0.7em;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 1.1em;
+    color: #fff !important;
     padding: 7px 12px;
     border-radius: 4px;
     opacity: 0;
@@ -150,12 +149,14 @@ footer #ahgomes:hover::before {
     opacity: 1;
 }
 
+*/
+
 footer #ahgomes:hover::after {
     content: "Author";
     position: fixed;
     margin: -42px -40px;
     background: rgba(0, 0, 0, 0.2);
-    font-size: 0.7em;
+    font-size: 1.1em;
     padding: 7px 12px;
     border-radius: 4px;
 }

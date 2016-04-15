@@ -17,8 +17,6 @@ function loading() {
 
       }
     }).run();
-    document.getElementById('icon').classList.remove('hist')
-    document.getElementById('icon').classList.add('alef')
 }
 
 var navbar = document.querySelector('nav');
@@ -39,6 +37,8 @@ function burstOPen() {
     page.style.opacity = '0';
     pageBack.style.background = '#f1f1f1';
     document.querySelector('.history').style.opacity = '1';
+    document.querySelector('footer').style.color = '#2d2d2d';
+    document.querySelector('footer').style.opacity = '0.6';
     navbar.style.transform = 'translateY(0)';
     checkCookie();
 }
@@ -49,7 +49,7 @@ var histPage = document.querySelector('.history');
 histPage.addEventListener('scroll', function() {
     var sT = histPage.scrollTop;
 
-    navbar.style.transition = 'transform 1000ms';
+    navbar.style.transition = 'transform 800ms';
 
     if(sT > lastScroll) {
         navbar.style.transform = 'translateY(-130px)';
