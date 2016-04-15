@@ -31,7 +31,40 @@ function burstOPen() {
 
     page.style.transform = 'translateX(-100%)';
     page.style.opacity = '0';
-    pageBack.style.background = '#d94255';
+    pageBack.style.background = '#f1f1f1';
     document.querySelector('.history').style.opacity = '1';
     checkCookie();
 }
+
+var lastScroll = 0;
+var histPage = document.querySelector('.history');
+
+histPage.addEventListener("scroll", function() {
+    var sT = histPage.scrollTop;
+
+    if(sT > lastScroll) {
+        //scrolling down
+    } else {
+        //scrolling up
+    }
+
+    lastScroll = sT;
+
+}, false);
+
+
+/*
+
+
+|   |   |   |
+|   |   |   |
+V   V   V   V
+
+
+*/
+
+
+
+
+
+//To get rid of 'disabled' class --> document.getElementById('alefLink').classList.remove('disabled');

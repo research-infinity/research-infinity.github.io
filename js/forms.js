@@ -1,5 +1,6 @@
 var inputCounter = 1;
 var completeInfo;
+var checked1 = false;
 
 function btnResponse(btnName, bg, icon) {
     btnName.style.background = bg;
@@ -22,7 +23,7 @@ function btnResponse(btnName, bg, icon) {
 }
 
 function inputSwitch(e, inputType) {
-    if(e.keyCode === 13){
+    if(e.keyCode == 13){
         inputType[inputCounter].focus();
         inputCounter++;
     }
@@ -36,13 +37,14 @@ var nameForm = document.querySelector('.namePopUp');
 var submitF1 = document.querySelector('#submitF1');
 
 function nameFormOPen() {
-    nameForm.style.top = 'calc(50% - 200px)';
+    nameForm.style.top = 'calc(50% - 50px)';
     nameInputs[0].focus();
 }
 
 function nameFormEnd(e) {
-    if(e.keyCode === 13){
+    if(e.keyCode == 13){
         nameFormCLose();
+        submitF1.focus();
     }
 }
 
@@ -50,18 +52,24 @@ function nameFormCLose() {
     var moveOn = 3;
 
     if(nameInputs[2].value < 10234 || nameInputs[2].value > 187051) {
-        nameInputs[2].setAttribute('required' , 'required');
+        nameInputs[2].required = true;
         moveOn--;
+    } else {
+        nameInputs[2].required = false;
     }
 
     if(nameInputs[0].value == '') {
-        nameInputs[0].setAttribute('required' , 'required');
+        nameInputs[0].required = true;
         moveOn--;
+    } else {
+        nameInputs[0].required = false;
     }
 
     if(nameInputs[1].value == '') {
-        nameInputs[1].setAttribute('required' , 'required');
+        nameInputs[1].required = true;
         moveOn--;
+    } else {
+        nameInputs[1].required = false;
     }
 
     if(moveOn == 3) {
@@ -74,4 +82,29 @@ function nameFormCLose() {
     }
 
     inputCounter = 0;
+    checked1 = true;
 }
+
+nameInputs[0].addEventListener('blur', function() {
+    if(nameInputs[0].value == '' && checked1) {
+        nameInputs[0].required = true;
+    } else {
+        nameInputs[0].required = false;
+    }
+}, true);
+
+nameInputs[1].addEventListener('blur', function() {
+    if(nameInputs[1].value == '' && checked1) {
+        nameInputs[1].required = true;
+    } else {
+        nameInputs[1].required = false;
+    }
+}, true);
+
+nameInputs[2].addEventListener('blur', function() {
+    if(checked1 && nameInputs[2].value < 10234 || nameInputs[2].value > 187051) {
+        nameInputs[2].required = true;
+    } else {
+        nameInputs[2].required = false;
+    }
+}, true);
