@@ -88,6 +88,80 @@ Start Page
 
 /*
 ------------------------------------------------------------------
+Footer
+------------------------------------------------------------------
+*/
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.2ch;
+    font-weight: 300;
+    transition: opacity 60000ms;
+}
+
+footer a:hover {
+    opacity: 0;
+}
+
+footer #legal:hover::after {
+    content: "Legal";
+    position: fixed;
+    margin: -42px -40px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    padding: 7px 12px;
+    border-radius: 4px;
+}
+
+footer #cookies:hover::after {
+    content: "Cookies";
+    position: fixed;
+    margin: -42px -40px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    padding: 7px 12px;
+    border-radius: 4px;
+}
+
+footer #ahgomes::before {
+    content: attr(href);
+    position: fixed;
+    top: 30px;
+    right: -100px;
+    background: rgba(225, 225, 225, 0.2);
+    font-size: 0.7em;
+    padding: 7px 12px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: right 900ms ease, opacity 900ms;
+}
+
+footer #ahgomes:hover::before {
+    right: 30px;
+    opacity: 1;
+}
+
+footer #ahgomes:hover::after {
+    content: "Author";
+    position: fixed;
+    margin: -42px -40px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.7em;
+    padding: 7px 12px;
+    border-radius: 4px;
+}
+
+/*
+------------------------------------------------------------------
 Navagation Bar
 ------------------------------------------------------------------
 */
@@ -99,6 +173,8 @@ nav {
     height: 130px;
     z-index: 1000;
     box-shadow: 0 2px 3px 0 rgba(147, 147, 147, 0.4);
+    transform: translateY(-130px);
+    transition: transform 1000ms 2000ms ease;
 }
 
 #links {
@@ -187,14 +263,28 @@ nav {
     color: #fff;
 }
 
-#icon i:hover::after {
-    content: "h";
+.hist:hover::after, .alef:hover::after, .paradox:hover::after {
+    content: "";
     position: fixed;
+    top: 85px;
     left: 93px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+.hist:hover::after {
     background: url(ic_filter_1_white_24dp_2x.png) #039BE5 center no-repeat;
+    background-size: 22px;
+}
+
+.alef:hover::after {
+    background: url(ic_filter_2_white_24dp_2x.png) #039BE5 center no-repeat;
+    background-size: 22px;
+}
+
+.paradox:hover::after {
+    background: url(ic_filter_3_white_24dp_2x.png) #039BE5 center no-repeat;
     background-size: 22px;
 }
 

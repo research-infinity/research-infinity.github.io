@@ -17,7 +17,13 @@ function loading() {
 
       }
     }).run();
+    document.getElementById('icon').classList.remove('hist')
+    document.getElementById('icon').classList.add('alef')
 }
+
+var navbar = document.querySelector('nav');
+var navLinks = document.querySelector('#links');
+var navTitle = document.querySelector('#titleBar');
 
 function burstOPen() {
     var page = document.querySelector('#headPage'),
@@ -33,19 +39,24 @@ function burstOPen() {
     page.style.opacity = '0';
     pageBack.style.background = '#f1f1f1';
     document.querySelector('.history').style.opacity = '1';
+    navbar.style.transform = 'translateY(0)';
     checkCookie();
 }
 
 var lastScroll = 0;
 var histPage = document.querySelector('.history');
 
-histPage.addEventListener("scroll", function() {
+histPage.addEventListener('scroll', function() {
     var sT = histPage.scrollTop;
 
+    navbar.style.transition = 'transform 1000ms';
+
     if(sT > lastScroll) {
-        //scrolling down
+        navbar.style.transform = 'translateY(-130px)';
+    } else if(sT == window.pageYOffset) {
+        navbar.style.transform = 'translateY(0px)';
     } else {
-        //scrolling up
+        navbar.style.transform = 'translateY(-80px)';
     }
 
     lastScroll = sT;
@@ -67,4 +78,5 @@ V   V   V   V
 
 
 
-//To get rid of 'disabled' class --> document.getElementById('alefLink').classList.remove('disabled');
+//To remove class --> document.getElementById('ID').classList.remove('CLASS');
+//To add class --> document.getElementById('ID').classList.add('CLASS');

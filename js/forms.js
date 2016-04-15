@@ -37,7 +37,7 @@ var nameForm = document.querySelector('.namePopUp');
 var submitF1 = document.querySelector('#submitF1');
 
 function nameFormOPen() {
-    nameForm.style.top = 'calc(50% - 50px)';
+    nameForm.style.top = 'calc(50% - 150px)';
     nameInputs[0].focus();
 }
 
