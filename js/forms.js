@@ -37,7 +37,7 @@ var nameForm = document.querySelector('.namePopUp');
 var submitF1 = document.querySelector('#submitF1');
 
 function nameFormOPen() {
-    nameForm.style.top = 'calc(50% - 150px)';
+    nameForm.style.top = 'calc(50% - 200px)';
     nameInputs[0].focus();
 }
 
@@ -77,6 +77,7 @@ function nameFormCLose() {
         setCookie("username", completeInfo, 30);
         btnResponse(submitF1, '#32b948', '&#xE877');
         nameForm.style.top = '200%';
+        nameFormDone = true;
     } else {
         btnResponse(submitF1, '#f63f3f', '&#xE002');
     }

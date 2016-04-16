@@ -17,34 +17,41 @@ function loading() {
 
       }
     }).run();
+    checkCookie();
 }
+
+var nameFormDone = false;
 
 var navbar = document.querySelector('nav');
 var navLinks = document.querySelector('#links');
 var navTitle = document.querySelector('#titleBar');
+var navEnd = '0px';
 
 function burstOPen() {
-    var page = document.querySelector('#headPage'),
-        pageBack = document.querySelector('#mainPage');
+    if(nameFormDone) {
+        var page = document.querySelector('#headPage'),
+            pageBack = document.querySelector('#mainPage');
 
-    new mojs.Burst({
-        shape:    'circle',
-        fill:     '#de3f3f',
-        x: '50.5%', y: '36%'
-    });
+        new mojs.Burst({
+            shape:    'circle',
+            fill:     '#de3f3f',
+            x: '50.5%', y: '36%'
+        });
 
-    page.style.transform = 'translateX(-100%)';
-    page.style.opacity = '0';
-    pageBack.style.background = '#f1f1f1';
-    document.querySelector('.history').style.opacity = '1';
-    document.querySelector('footer').style.color = '#2d2d2d';
-    document.querySelector('footer').style.opacity = '0.6';
-    navbar.style.transform = 'translateY(0)';
-    checkCookie();
+        page.style.transform = 'translateX(-100%)';
+        page.style.opacity = '0';
+        pageBack.style.background = '#f1f1f1';
+        document.querySelector('.history').style.opacity = '1';
+        document.querySelector('footer').style.color = '#2d2d2d';
+        document.querySelector('footer').style.opacity = '0.6';
+        navbar.style.transform = 'translateY(0)';
+        navEnd = '130px';
+    }
 }
 
 var lastScroll = 0;
 var histPage = document.querySelector('.history');
+
 
 histPage.addEventListener('scroll', function() {
     var sT = histPage.scrollTop;
@@ -53,16 +60,42 @@ histPage.addEventListener('scroll', function() {
 
     if(sT > lastScroll) {
         navbar.style.transform = 'translateY(-130px)';
+        navEnd = '0px';
     } else if(sT == window.pageYOffset) {
         navbar.style.transform = 'translateY(0px)';
+        navEnd = '130px';
     } else {
         navbar.style.transform = 'translateY(-80px)';
+        navEnd = '50px';
     }
 
     lastScroll = sT;
 
 }, false);
 
+
+var lCard = document.querySelector('.legalCard');
+
+function legalOPen() {
+    if(nameFormDone) {
+        lCard.style.top = navEnd;
+        lCard.style.right = '0';
+        lCard.style.height = '100%';
+        lCard.style.width = 'calc(100% - 50px)';
+        document.querySelector('.legalCard .closeButton').style.top = 'calc('+ navEnd +' + 30px)';
+        document.querySelector('.legalCard .closeButton').style.transform = 'scale(1)';
+    }
+}
+
+function legalCLose() {
+    if(nameFormDone) {
+        lCard.style.top = '110%';
+        lCard.style.right = '160px';
+        lCard.style.height = '0';
+        lCard.style.width = '0';
+        document.querySelector('.legalCard .closeButton').style.transform = 'scale(0)';
+    }
+}
 
 /*
 

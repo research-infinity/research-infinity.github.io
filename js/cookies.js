@@ -22,5 +22,7 @@ function checkCookie() {
     var user = getCookie("username");
     if (user == "") {
         nameFormOPen();
+    } else {
+        nameFormDone = true;
     }
 }
