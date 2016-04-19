@@ -3,11 +3,11 @@
     <head>
         <title>infinity</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="infinity.png" />
+        <link rel="icon" type="image/png" href="ic_all_inclusive_black_48dp_2x.png" />
         <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body onload="loading()" >
+    <body onload="loading()">
         <div class="header" id="mainPage" style="background: #37368e">
             <div id="headPage">
                 <div class="square" id="js-square" style="text-align: center; line-height: 80px; font-size: 20px;" onclick="burstOPen()"><i class="material-icons" style="line-height: 60px; font-size: 35px;">&#xEB3D</i></div>
@@ -38,19 +38,19 @@
                 <div id="titleBar">
                     <div class="hist" id="icon"><i class="material-icons">&#xE02F</i></div>
                     <div id="pgTitle">History</div>
-                    <div id="openNav" onclick="navbar.style.transform = 'translateY(0px)'"><i class="material-icons">&#xE316</i></div>
+                    <div id="openNav" onclick="navbar.style.transform = 'translateY(0px)'; histPage.scrollTop = 0; histPage.scrollTo(0,0); document.querySelector('#openNav').style.opacity = '0';"><i class="material-icons">&#xE316</i></div>
                 </div>
             </nav>
             <footer>
-                <a onclick="legalOPen()" id="legal"><i class="material-icons">&#xE90E</i></a>
-                <a href="#" id="cookies"><i class="material-icons">&#xE3A2</i></a>
+                <a onclick="legalOPen(lCard, lBtn, cardOpenL)" id="legal"><i class="material-icons">&#xE90E</i></a>
+                <a onclick="legalOPen(cCard, cBtn, cardOpenC)" id="cookies"><i class="material-icons">&#xE3A2</i></a>
                 <a target="_blank" href="http://ahgomes.github.io" id="ahgomes"><i class="material-icons">&#xE0BA</i></a>
             </footer>
             <div class="namePopUp">
                 <h2 id="formTitle">fill in your info</h2>
                 <ul class="form">
                     <li id="firstName">
-                        <input id="firstNameText" type="text" name="q1" placeholder="First Name" onkeypress="inputSwitch(event, nameInputs)" onfocus="inputCounter = 1;">
+                        <input id="firstNameText" type="text" name="q1" placeholder="First Name" onkeypress="inputSwitch(event, nameInputs)" onfocus="inputCounter = 1; window.clearInterval(focus1);">
                     </li>
                     <li id="lastName">
                         <input id="lastNameText" type="text" name="q2" placeholder="Last Name" onkeypress="inputSwitch(event, nameInputs)" onfocus="inputCounter = 2;">
@@ -93,95 +93,11 @@
                 <h1>history</h1>
                 <h1>history</h1>
                 <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
             </div>
             <div class="legalCard">
                 <h1>LEGAL</h1>
                 <br>
-                <div class="closeButton" onclick="legalCLose()"><i class="material-icons">&#xE5CD</i></div>
+                <div class="closeButtonL" onclick="legalCLose(lCard, lBtn, cardOpenL)"><i class="material-icons">&#xE5CD</i></div>
                 <p>The MIT License (MIT) <br>
                      <br>
                     Copyright (c) 2016 Adrian Gomes <br>
@@ -206,6 +122,32 @@
                 </p>
                 <br>
                 <p>Citations<br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                </p>
+            </div>
+            <div class="cookiesCard">
+                <h1>COOKIES</h1>
+                <br>
+                <div class="closeButtonC" onclick="legalCLose(cCard, cBtn, cardOpenC)"><i class="material-icons">&#xE5CD</i></div>
+                <p><br>
                      <br>
                      <br>
                      <br>

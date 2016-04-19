@@ -56,15 +56,23 @@ var histPage = document.querySelector('.history');
 histPage.addEventListener('scroll', function() {
     var sT = histPage.scrollTop;
 
-    navbar.style.transition = 'transform 800ms';
-
     if(sT > lastScroll) {
-        navbar.style.transform = 'translateY(-130px)';
-        navEnd = '0px';
-    } else if(sT == window.pageYOffset) {
+        if(sT <= 130) {
+            navbar.style.transition = 'transform 0ms 0ms';
+            navbar.style.transform = 'translateY(-' + sT + 'px)';
+            document.querySelector('#openNav').style.opacity = '1';
+            navEnd = 130 - sT + 'px';
+        } else {
+            navbar.style.transform = 'translateY(-130px)';
+            document.querySelector('#openNav').style.opacity = '1';
+            navEnd = '0px';
+        }
+    } else if(sT <= 5) {
         navbar.style.transform = 'translateY(0px)';
         navEnd = '130px';
+        document.querySelector('#openNav').style.opacity = '0';
     } else {
+        navbar.style.transition = 'transform 800ms';
         navbar.style.transform = 'translateY(-80px)';
         navEnd = '50px';
     }
@@ -75,25 +83,32 @@ histPage.addEventListener('scroll', function() {
 
 
 var lCard = document.querySelector('.legalCard');
+var cCard = document.querySelector('.cookiesCard');
+var lBtn = document.querySelector('.legalCard .closeButtonL');
+var cBtn = document.querySelector('.cookiesCard .closeButtonC');
+var cardOpenL = false;
+var cardOpenC = false;
 
-function legalOPen() {
+function legalOPen(card, cardBtn, boolean) {
     if(nameFormDone) {
-        lCard.style.top = navEnd;
-        lCard.style.right = '0';
-        lCard.style.height = '100%';
-        lCard.style.width = 'calc(100% - 50px)';
-        document.querySelector('.legalCard .closeButton').style.top = 'calc('+ navEnd +' + 30px)';
-        document.querySelector('.legalCard .closeButton').style.transform = 'scale(1)';
+        card.style.top = navEnd;
+        card.style.right = '0';
+        card.style.height = '100%';
+        card.style.width = 'calc(100% - 50px)';
+        cardBtn.style.top = 'calc('+ navEnd +' + 30px)';
+        cardBtn.style.transform = 'scale(1)';
+        boolean = true;
     }
 }
 
-function legalCLose() {
+function legalCLose(card, cardBtn, boolean) {
     if(nameFormDone) {
-        lCard.style.top = '110%';
-        lCard.style.right = '160px';
-        lCard.style.height = '0';
-        lCard.style.width = '0';
-        document.querySelector('.legalCard .closeButton').style.transform = 'scale(0)';
+        card.style.top = '110%';
+        card.style.right = '160px';
+        card.style.height = '0';
+        card.style.width = '0';
+        cardBtn.style.transform = 'scale(0)';
+        boolean = false;
     }
 }
 

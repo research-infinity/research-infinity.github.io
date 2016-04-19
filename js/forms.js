@@ -25,7 +25,6 @@ function btnResponse(btnName, bg, icon) {
 function inputSwitch(e, inputType) {
     if(e.keyCode == 13){
         inputType[inputCounter].focus();
-        inputCounter++;
     }
 }
 
@@ -35,10 +34,11 @@ function inputSwitch(e, inputType) {
 var nameInputs = [document.querySelector('#firstNameText'), document.querySelector('#lastNameText'), document.querySelector('#IDText')];
 var nameForm = document.querySelector('.namePopUp');
 var submitF1 = document.querySelector('#submitF1');
+var focus1;
 
 function nameFormOPen() {
     nameForm.style.top = 'calc(50% - 200px)';
-    nameInputs[0].focus();
+    focus1 = window.setInterval(function(){nameInputs[0].focus();}, 4000);
 }
 
 function nameFormEnd(e) {
