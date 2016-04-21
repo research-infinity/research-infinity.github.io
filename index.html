@@ -34,12 +34,14 @@
                     <div id="alefLink" class="disabled" onclick=""><i class="material-icons" id="alefIcon">א</i><p id="alefText">Alefs</p></div>
                     <div id="paradoxLink" class="disabled" onclick=""><i class="material-icons" id="paradoxIcon">&#xE418</i><p id="paradoxText">Paradoxes</p></div>
                     <div id="endLink" class="done disabled" onclick=""><i class="material-icons" id="endIcon">&#xE877</i><p id="endText">Done</p></div>
+                    <button id="accountLink" class="usersName" onclick="nameTOggle(20)"></button>
                 </div>
                 <div id="titleBar">
                     <div class="hist" id="icon"><i class="material-icons">&#xE02F</i></div>
                     <div id="pgTitle">History</div>
                     <div id="openNav" onclick="navbar.style.transform = 'translateY(0px)'; histPage.scrollTop = 0; histPage.scrollTo(0,0); document.querySelector('#openNav').style.opacity = '0';"><i class="material-icons">&#xE316</i></div>
                 </div>
+                <div class="nameCard"></div>
             </nav>
             <footer>
                 <a onclick="legalOPen(lCard, lBtn, cardOpenL)" id="legal"><i class="material-icons">&#xE90E</i></a>
@@ -100,7 +102,7 @@
                 <div class="closeButtonL" onclick="legalCLose(lCard, lBtn, cardOpenL)"><i class="material-icons">&#xE5CD</i></div>
                 <p>The MIT License (MIT) <br>
                      <br>
-                    Copyright (c) 2016 Adrian Gomes <br>
+                    Copyright (c) 2016 Adrian Gomes<br>
                      <br>
                     Permission is hereby granted, free of charge, to any person obtaining a copy <br>
                     of this software and associated documentation files (the "Software"), to deal <br>

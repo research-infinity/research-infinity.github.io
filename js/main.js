@@ -112,6 +112,16 @@ function legalCLose(card, cardBtn, boolean) {
     }
 }
 
+/*userCard.classList.add('usersIcon');
+userCard.innerHTML = '<i class="material-icons">&#xE7FD</i>';
+document.querySelector('.nameCard').innerHTML = completeInfo;*/
+
+//document.getElementsByClassName('usersIcon').onclick = function(){document.querySelector('.nameCard').style.right = '20px'};
+
+function nameTOggle(right) {
+    if(nameSmall) document.querySelector('.nameCard').style.right = right + 'px';
+}
+
 /*
 
 
