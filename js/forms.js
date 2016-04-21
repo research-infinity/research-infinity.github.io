@@ -81,7 +81,7 @@ function nameFormCLose() {
             userCard.classList.remove('usersName');
             userCard.classList.add('usersIcon');
             userCard.innerHTML = '<i class="material-icons">&#xE7FD</i>';
-            document.querySelector('.nameCard').innerHTML = completeInfo + '<br><br><i class="material-icons" onclick="nameTOggle(-260)" style="width: 100%; text-align: center; color: #f00, cursor: pointer">&#xE888</i>';
+            document.querySelector('.nameCard').innerHTML = completeInfo + '<br><br><i class="material-icons" onclick="nameTOggle(-260)" style="width: 100%; text-align: center; color: #f00; cursor: pointer;">&#xE888</i>';
             nameSmall = true;
         }
         setCookie('username', completeInfo, 30);
