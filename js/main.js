@@ -33,8 +33,8 @@ function burstOPen() {
             pageBack = document.querySelector('#mainPage');
 
         new mojs.Burst({
-            shape:    'circle',
-            fill:     '#de3f3f',
+            shape: 'cicle',
+            fill: '#de3f3f',
             x: '50.5%', y: '36%'
         });
 
@@ -122,8 +122,36 @@ function nameTOggle(right) {
     if(nameSmall) document.querySelector('.nameCard').style.right = right + 'px';
 }
 
-/*
+var xPos, yPos;
 
+window.onmousemove = function(e){xPos = e.clientX; yPos = e.clientY;};
+
+document.querySelector('#links h1').addEventListener('mouseover', function() {
+    new mojs.Transit({
+        duration: 500,
+        type: 'circle',
+        radius: {0: 25},
+        fill: 'transparent',
+        stroke: '#853fde',
+        strokeWidth: {30:0},
+        opacity: 0.5,
+        x: xPos, y: yPos,
+    });
+
+    new mojs.Transit({
+        duration: 500,
+        delay: 100,
+        type: 'circle',
+        radius: {0: 50},
+        fill: 'transparent',
+        stroke: '#3f9bde',
+        strokeWidth: {15:0},
+        opacity: 0.4,
+        x: xPos, y: yPos,
+    });
+});
+
+/*
 
 |   |   |   |
 |   |   |   |
