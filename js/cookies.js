@@ -23,7 +23,7 @@ function checkCookie() {
     if (user == '') {
         nameFormOPen();
     } else {
-        //nameFormDone = true;
+        nameFormDone = true;
         userCard.innerHTML = user;
         if(userCard.offsetWidth > 200) {
             userCard.classList.remove('usersName');
