@@ -269,17 +269,17 @@ nav {
 
 #histLink {
     position: absolute;
-    left: calc(50% - 40px);
+    left: calc(40% - 40px);
  }
 
 #alefLink {
     position: absolute;
-    left: calc(50% + 100px);
+    left: calc(40% + 100px);
 }
 
 #paradoxLink {
     position: absolute;
-    left: calc(50% + 240px);
+    left: calc(40% + 240px);
 }
 
 #accountLink {
@@ -297,6 +297,8 @@ nav {
 
 .usersName {
     min-width: 200px;
+    border: none;
+    cursor: default !important;
 }
 
 .usersIcon {
@@ -306,6 +308,7 @@ nav {
     border: none;
     border-radius: 5px;
     background: #229bc2 !important;
+    cursor: pointer;
 }
 
 .nameCard {
@@ -360,6 +363,7 @@ nav {
     background: #fff;
     color: #2d2d2d;
     opacity: 0;
+    cursor: pointer;
 }
 
 .hist:hover::after, .alef:hover::after, .paradox:hover::after {
@@ -415,7 +419,7 @@ nav {
 }
 
 #alefLink:hover::after {
-    width: 50px;
+    width: 60px;
 }
 
 #paradoxLink:hover::after {
@@ -432,7 +436,7 @@ nav {
 .done {
     position: fixed;
     top: 15px;
-    left: calc(50% + 440px) !important;
+    left: calc(40% + 440px) !important;
     line-height: 50px;
     padding-left: 5px;
     width: 100px;
@@ -533,11 +537,55 @@ The History of Infinity
     transition: opacity 1000ms 2000ms ease;
 }
 
+.alefSection {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #f1f1f1;
+    overflow: scroll;
+    transition: right 2000ms ease;
+    z-index: 100;
+}
+
+.alefSection h1 {
+    position: relative;
+    text-align: center;
+    line-height: 100vh;
+    padding-top: 50px;
+    font-size: 165px;
+    z-index: 1;
+}
+
 .history h1 {
     position: relative;
-    color: #f1f1f1;
     text-align: center;
-    line-height: 40vh;
-    font-size: 4.5em;
+    line-height: 100vh;
+    padding-top: 50px;
+    font-size: 165px;
     z-index: 1;
+}
+
+.greekHist {
+    padding: 100px 400px;
+    background: #71aaff;
+    color: #000;
+}
+
+.medievalHist {
+    padding: 100px 400px;
+    background: #d53838;
+    color: #000;
+}
+
+.modernHist {
+    padding: 100px 400px;
+    background: #fcc82a;
+    color: #000;
+}
+
+.questionsHist {
+    padding: 100px 400px;
+    background: #3e2887;
+    color: #000;
 }

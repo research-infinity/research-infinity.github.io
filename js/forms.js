@@ -87,7 +87,7 @@ function nameFormCLose() {
         setCookie('username', completeInfo, 30);
         btnResponse(submitF1, '#32b948', '&#xE877');
         nameForm.style.top = '200%';
-        nameFormDone = true;
+        //nameFormDone = true;
     } else {
         btnResponse(submitF1, '#f63f3f', '&#xE002');
     }

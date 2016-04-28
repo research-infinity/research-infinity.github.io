@@ -26,8 +26,10 @@ var navbar = document.querySelector('nav');
 var navLinks = document.querySelector('#links');
 var navTitle = document.querySelector('#titleBar');
 var navEnd = '0px';
+var openAlefPage = false;
 
 function burstOPen() {
+    alert('ERROR: "455DD"');
     if(nameFormDone) {
         var page = document.querySelector('#headPage'),
             pageBack = document.querySelector('#mainPage');
@@ -46,15 +48,83 @@ function burstOPen() {
         document.querySelector('footer').style.opacity = '0.6';
         navbar.style.transform = 'translateY(0)';
         navEnd = '130px';
+        histPage.scrollTop = 0;
+        histPage.scrollTo(0,0);
+    }
+}
+
+function histOPen() {
+    document.querySelector('.alefSection').style.opacity = '0';
+    document.querySelector('.alefSection').style.right = '-100%';
+    document.querySelector('.paradoxesSection').style.opacity = '0';
+    document.querySelector('.paradoxesSection').style.right = '-100%';
+    histPage.scrollTop = 0;
+    histPage.scrollTo(0,0);
+    navbar.style.transition = 'transform 2000ms 1500ms';
+    navbar.style.transform = 'translateY(0)';
+    navEnd = '130px';
+    document.getElementById('icon').classList.remove('alef');
+    document.getElementById('icon').classList.add('hist');
+    document.querySelector('#icon').innerHTML = '<i class="material-icons">&#xE02F</i>';
+    document.querySelector('#icon i').style.fontSize = '24px';
+    document.querySelector('#icon i').style.lineHeight = '40px';
+    document.querySelector('#pgTitle').innerHTML = 'History';
+}
+
+function alefOPen() {
+    if(openAlefPage) {
+        document.querySelector('.alefSection').style.opacity = '1';
+        document.querySelector('.alefSection').style.right = '0';
+        alefPage.scrollTop = 0;
+        alefPage.scrollTo(0,0);
+        navbar.style.transition = 'transform 2000ms 1500ms';
+        navbar.style.transform = 'translateY(0)';
+        navEnd = '130px';
+        document.getElementById('icon').classList.remove('hist');
+        document.getElementById('alefLink').classList.remove('disabled');
+        document.getElementById('icon').classList.add('alef');
+        document.querySelector('#icon').innerHTML = '<i class="material-icons">א</i>';
+        document.querySelector('#icon i').style.fontSize = '35px';
+        document.querySelector('#icon i').style.lineHeight = '27px';
+        document.querySelector('#pgTitle').innerHTML = 'Alephs';
     }
 }
 
 var lastScroll = 0;
 var histPage = document.querySelector('.history');
+var alefPage = document.querySelector('.alefSection');
 
 
 histPage.addEventListener('scroll', function() {
     var sT = histPage.scrollTop;
+
+    if(sT > lastScroll) {
+        if(sT <= 130) {
+            navbar.style.transition = 'transform 0ms 0ms';
+            navbar.style.transform = 'translateY(-' + sT + 'px)';
+            document.querySelector('#openNav').style.opacity = '1';
+            navEnd = 130 - sT + 'px';
+        } else {
+            navbar.style.transform = 'translateY(-130px)';
+            document.querySelector('#openNav').style.opacity = '1';
+            navEnd = '0px';
+        }
+    } else if(sT <= 5) {
+        navbar.style.transform = 'translateY(0px)';
+        navEnd = '130px';
+        document.querySelector('#openNav').style.opacity = '0';
+    } else {
+        navbar.style.transition = 'transform 800ms';
+        navbar.style.transform = 'translateY(-80px)';
+        navEnd = '50px';
+    }
+
+    lastScroll = sT;
+
+}, false);
+
+alefPage.addEventListener('scroll', function() {
+    var sT = alefPage.scrollTop;
 
     if(sT > lastScroll) {
         if(sT <= 130) {
@@ -129,24 +199,23 @@ window.onmousemove = function(e){xPos = e.clientX; yPos = e.clientY;};
 document.querySelector('#links h1').addEventListener('mouseover', function() {
     new mojs.Transit({
         duration: 500,
+        delay: 200,
         type: 'circle',
         radius: {0: 25},
         fill: 'transparent',
-        stroke: '#853fde',
+        stroke: '#ff4040',
         strokeWidth: {30:0},
-        opacity: 0.5,
+        opacity: 0.9,
         x: xPos, y: yPos,
     });
 
-    new mojs.Transit({
+    new mojs.Burst({
         duration: 500,
         delay: 100,
-        type: 'circle',
-        radius: {0: 50},
-        fill: 'transparent',
-        stroke: '#3f9bde',
-        strokeWidth: {15:0},
-        opacity: 0.4,
+        shape: 'circle',
+        radius: {0:50},
+        fill: '#ffdd49',
+        opacity: 0.9,
         x: xPos, y: yPos,
     });
 });

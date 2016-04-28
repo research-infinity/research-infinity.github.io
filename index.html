@@ -30,8 +30,8 @@
             <nav>
                 <div id="links">
                     <h1>infinity</h1>
-                    <div id="histLink" onclick=""><i class="material-icons"  id="histIcon">&#xE02F</i><p id="histText">History</p></div>
-                    <div id="alefLink" class="disabled" onclick=""><i class="material-icons" id="alefIcon">א</i><p id="alefText">Alefs</p></div>
+                    <div id="histLink" onclick="histOPen()"><i class="material-icons"  id="histIcon">&#xE02F</i><p id="histText">History</p></div>
+                    <div id="alefLink" class="disabled" onclick="alefOPen()"><i class="material-icons" id="alefIcon">א</i><p id="alefText">Alephs</p></div>
                     <div id="paradoxLink" class="disabled" onclick=""><i class="material-icons" id="paradoxIcon">&#xE418</i><p id="paradoxText">Paradoxes</p></div>
                     <div id="endLink" class="done disabled" onclick=""><i class="material-icons" id="endIcon">&#xE877</i><p id="endText">Done</p></div>
                     <button id="accountLink" class="usersName" onclick="nameTOggle(20)"></button>
@@ -45,7 +45,7 @@
             </nav>
             <footer>
                 <a onclick="legalOPen(lCard, lBtn, cardOpenL)" id="legal"><i class="material-icons">&#xE90E</i></a>
-                <a onclick="legalOPen(cCard, cBtn, cardOpenC)" id="cookies"><i class="material-icons">&#xE3A2</i></a>
+                <!--<a onclick="legalOPen(cCard, cBtn, cardOpenC)" id="cookies"><i class="material-icons">&#xE3A2</i></a>-->
                 <a target="_blank" href="http://ahgomes.github.io" id="ahgomes"><i class="material-icons">&#xE0BA</i></a>
             </footer>
             <div class="namePopUp">
@@ -69,32 +69,66 @@
                 <h2>more</h2>
             </div>-->
             <div class="history" style="opacity: 0">
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
-                <h1>history</h1>
+                <h1>history of <span style="color: rgba(53, 52, 136, 0.79)">infinity</span></h1>
+                <div class="greekHist">
+                    <h2 style="color: #fff;">Ancient Greece</h2>
+                    <br>
+                    <p>
+                        The Greeks viewed infinity negatively. The word range from many different meanings: <i>unbound, indefinite, complex, total disorder, or undefined</i>.
+                        The chaos before the world was created was considered infinite, a crooked line too. Aristotle, a Greek philosopher, noticed that many aspects of the world seemed infinite.
+                        Time could go on forever and space could be infinitly divisable, making it possible for a line to contain an infinite number of points.
+                        In order to avoid chaos and confusion that could threaten the orderliness of a finite universe, Aristotle coined the term <i>potentially infinite</i>;
+                        this way he did not have to consider <i>actually infinte</i> concepts and numbers.
+                        For example, he said that the set of all natural numbers is potentially infinite.
+                        Because there is no <i>largest</i> natural number and no finished list, the set of all natural numbers cannot be actually infinite.
+                        Plato and Pythagoras believed did not belive in any infinity, not even potential infinities.
+                        The fist philosopher to belive in the sightest concept of infinity was Plotinas; he belived that God, or the One, was infinite.
+                    </p>
+                    <br>
+                    <p style="margin-left: 50px; padding: 0 200px 0 10px; border-left: 3px solid #fff">
+                        Absolutely One, it has never known measure and stands outside of number, and so is under no limit either in regard to anything external or internal,
+                        for any such determination would bring something of the dual into it. <i>- Plotinas</i>
+                    </p>
+                </div>
+                <div class="medievalHist">
+                    <h2 style="color: #fff;">Medieval Europe</h2>
+                    <br>
+                    <p>
+
+                    </p>
+                </div>
+                <div class="modernHist">
+                    <h2 style="color: #fff;">Modern Mathematics</h2>
+                    <br>
+                    <p>
+
+                    </p>
+                </div>
+                <div class="questionsHist">
+                    <h2 style="color: #fff;">Questions</h2>
+                    <br>
+                    <ul class="">
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                        </li>
+                    </ul>
+                    <button onclick="openAlefPage = true; alefOPen()"></button>
+                </div>
+            </div>
+            <div class="alefSection" style="opacity: 0; right: -100%">
+                <h1>alephs</h1>
+            </div>
+            <div class="paradoxesSection" style="opacity: 0; right: 100%">
+                <h1>paradoxes</h1>
             </div>
             <div class="legalCard">
                 <h1>LEGAL</h1>
@@ -123,9 +157,10 @@
                     SOFTWARE.
                 </p>
                 <br>
-                <p>Citations<br>
-                     <br>
-                     <br>
+                <p><h3>Citations</h3>
+                    <br>
+                    A History of Ancient Philosophy IV: The Schools of the Imperial Age<br>
+                    By Giovanni Reale<br>
                      <br>
                      <br>
                      <br>
