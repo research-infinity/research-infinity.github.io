@@ -160,6 +160,7 @@ var cardOpenL = false;
 var cardOpenC = false;
 
 function legalOPen(card, cardBtn, boolean) {
+    alert('ERROR: "874AC"');
     if(nameFormDone) {
         card.style.top = navEnd;
         card.style.right = '0';
