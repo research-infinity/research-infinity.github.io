@@ -29,7 +29,7 @@ var navEnd = '0px';
 var openAlefPage = false;
 
 function burstOPen() {
-    //alert('ERROR: "455DD"');
+    alert('ERROR: "455DD"');
     if(nameFormDone) {
         var page = document.querySelector('#headPage'),
             pageBack = document.querySelector('#mainPage');
