@@ -27,9 +27,12 @@ var navLinks = document.querySelector('#links');
 var navTitle = document.querySelector('#titleBar');
 var navEnd = '0px';
 var openAlefPage = false;
+var openParaPage = false;
+var openENDPage = false;
+var justChecking = false;
 
 function burstOPen() {
-    alert('ERROR: "455DD"');
+    //alert('ERROR: "455DD"');
     if(nameFormDone) {
         var page = document.querySelector('#headPage'),
             pageBack = document.querySelector('#mainPage');
@@ -49,21 +52,25 @@ function burstOPen() {
         navbar.style.transform = 'translateY(0)';
         navEnd = '130px';
         histPage.scrollTop = 0;
-        histPage.scrollTo(0,0);
+        justChecking = true;
     }
 }
 
 function histOPen() {
-    document.querySelector('.alefSection').style.opacity = '0';
+    histPage.style.zIndex = '102';
+    document.querySelector('.alefSection').style.zIndex = '100';
+    histPage.style.transition = 'right 2000ms ease';
+    histPage.style.right = '0';
+    document.querySelector('.alefSection').style.transition = 'right 2000ms 2000ms ease';
+    document.querySelector('.paradoxesSection').style.transition = 'right 2000ms 2000ms ease';
     document.querySelector('.alefSection').style.right = '-100%';
-    document.querySelector('.paradoxesSection').style.opacity = '0';
     document.querySelector('.paradoxesSection').style.right = '-100%';
     histPage.scrollTop = 0;
-    histPage.scrollTo(0,0);
     navbar.style.transition = 'transform 2000ms 1500ms';
     navbar.style.transform = 'translateY(0)';
     navEnd = '130px';
     document.getElementById('icon').classList.remove('alef');
+    document.getElementById('icon').classList.remove('paradox');
     document.getElementById('icon').classList.add('hist');
     document.querySelector('#icon').innerHTML = '<i class="material-icons">&#xE02F</i>';
     document.querySelector('#icon i').style.fontSize = '24px';
@@ -73,14 +80,20 @@ function histOPen() {
 
 function alefOPen() {
     if(openAlefPage) {
-        document.querySelector('.alefSection').style.opacity = '1';
+        document.querySelector('.alefSection').style.zIndex = '102';
+        histPage.style.zIndex = '0';
+        document.querySelector('.alefSection').style.transition = 'right 2000ms ease';
         document.querySelector('.alefSection').style.right = '0';
+        document.querySelector('.paradoxesSection').style.transition = 'right 2000ms 2000ms ease';
+        document.querySelector('.paradoxesSection').style.right = '-100%';
+        histPage.style.transition = 'right 2000ms 2000ms ease';
+        histPage.style.right = '-100%';
         alefPage.scrollTop = 0;
-        alefPage.scrollTo(0,0);
         navbar.style.transition = 'transform 2000ms 1500ms';
         navbar.style.transform = 'translateY(0)';
         navEnd = '130px';
         document.getElementById('icon').classList.remove('hist');
+        document.getElementById('icon').classList.remove('paradox');
         document.getElementById('alefLink').classList.remove('disabled');
         document.getElementById('icon').classList.add('alef');
         document.querySelector('#icon').innerHTML = '<i class="material-icons">א</i>';
@@ -90,67 +103,124 @@ function alefOPen() {
     }
 }
 
+function paraOPen() {
+    if(openParaPage) {
+        document.querySelector('.alefSection').style.zIndex = '100';
+        histPage.style.zIndex = '0';
+        document.querySelector('.paradoxesSection').style.transition = 'right 2000ms ease';
+        document.querySelector('.paradoxesSection').style.right = '0';
+        document.querySelector('.alefSection').style.transition = 'right 2000ms 2000ms ease';
+        document.querySelector('.alefSection').style.right = '-100%';
+        histPage.style.transition = 'right 2000ms 2000ms ease';
+        histPage.style.right = '-100%';
+        paraPage.scrollTop = 0;
+        //paraPage.scrollTo(0,0);
+        navbar.style.transition = 'transform 2000ms 1500ms';
+        navbar.style.transform = 'translateY(0)';
+        navEnd = '130px';
+        document.getElementById('icon').classList.remove('hist');
+        document.getElementById('icon').classList.remove('alef');
+        document.getElementById('paradoxLink').classList.remove('disabled');
+        document.getElementById('icon').classList.add('paradox');
+        document.querySelector('#icon').innerHTML = '<i class="material-icons">&#xE418</i>';
+        document.querySelector('#icon i').style.fontSize = '24px';
+        document.querySelector('#icon i').style.lineHeight = '40px';
+        document.querySelector('#pgTitle').innerHTML = 'Paradoxes';
+    }
+}
+
 var lastScroll = 0;
 var histPage = document.querySelector('.history');
 var alefPage = document.querySelector('.alefSection');
+var paraPage = document.querySelector('.paradoxesSection');
 
 
 histPage.addEventListener('scroll', function() {
-    var sT = histPage.scrollTop;
+    if(justChecking) {
+        var sT = histPage.scrollTop;
 
-    if(sT > lastScroll) {
-        if(sT <= 130) {
-            navbar.style.transition = 'transform 0ms 0ms';
-            navbar.style.transform = 'translateY(-' + sT + 'px)';
-            document.querySelector('#openNav').style.opacity = '1';
-            navEnd = 130 - sT + 'px';
+        if(sT > lastScroll) {
+            if(sT <= 130) {
+                navbar.style.transition = 'transform 0ms 0ms';
+                navbar.style.transform = 'translateY(-' + sT + 'px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = 130 - sT + 'px';
+            } else {
+                navbar.style.transform = 'translateY(-130px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = '0px';
+            }
+        } else if(sT <= 5) {
+            navbar.style.transform = 'translateY(0px)';
+            navEnd = '130px';
+            document.querySelector('#openNav').style.opacity = '0';
         } else {
-            navbar.style.transform = 'translateY(-130px)';
-            document.querySelector('#openNav').style.opacity = '1';
-            navEnd = '0px';
+            navbar.style.transition = 'transform 800ms';
+            navbar.style.transform = 'translateY(-80px)';
+            navEnd = '50px';
         }
-    } else if(sT <= 5) {
-        navbar.style.transform = 'translateY(0px)';
-        navEnd = '130px';
-        document.querySelector('#openNav').style.opacity = '0';
-    } else {
-        navbar.style.transition = 'transform 800ms';
-        navbar.style.transform = 'translateY(-80px)';
-        navEnd = '50px';
+
+        lastScroll = sT;
     }
-
-    lastScroll = sT;
-
 }, false);
 
 alefPage.addEventListener('scroll', function() {
-    var sT = alefPage.scrollTop;
+    if(justChecking) {
+        var sT = alefPage.scrollTop;
 
-    if(sT > lastScroll) {
-        if(sT <= 130) {
-            navbar.style.transition = 'transform 0ms 0ms';
-            navbar.style.transform = 'translateY(-' + sT + 'px)';
-            document.querySelector('#openNav').style.opacity = '1';
-            navEnd = 130 - sT + 'px';
+        if(sT > lastScroll) {
+            if(sT <= 130) {
+                navbar.style.transition = 'transform 0ms 0ms';
+                navbar.style.transform = 'translateY(-' + sT + 'px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = 130 - sT + 'px';
+            } else {
+                navbar.style.transform = 'translateY(-130px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = '0px';
+            }
+        } else if(sT <= 5) {
+            navbar.style.transform = 'translateY(0px)';
+            navEnd = '130px';
+            document.querySelector('#openNav').style.opacity = '0';
         } else {
-            navbar.style.transform = 'translateY(-130px)';
-            document.querySelector('#openNav').style.opacity = '1';
-            navEnd = '0px';
+            navbar.style.transition = 'transform 800ms';
+            navbar.style.transform = 'translateY(-80px)';
+            navEnd = '50px';
         }
-    } else if(sT <= 5) {
-        navbar.style.transform = 'translateY(0px)';
-        navEnd = '130px';
-        document.querySelector('#openNav').style.opacity = '0';
-    } else {
-        navbar.style.transition = 'transform 800ms';
-        navbar.style.transform = 'translateY(-80px)';
-        navEnd = '50px';
+
+        lastScroll = sT;
     }
-
-    lastScroll = sT;
-
 }, false);
 
+paraPage.addEventListener('scroll', function() {
+    if(justChecking) {
+        var sT = paraPage.scrollTop;
+
+        if(sT > lastScroll) {
+            if(sT <= 130) {
+                navbar.style.transition = 'transform 0ms 0ms';
+                navbar.style.transform = 'translateY(-' + sT + 'px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = 130 - sT + 'px';
+            } else {
+                navbar.style.transform = 'translateY(-130px)';
+                document.querySelector('#openNav').style.opacity = '1';
+                navEnd = '0px';
+            }
+        } else if(sT <= 5) {
+            navbar.style.transform = 'translateY(0px)';
+            navEnd = '130px';
+            document.querySelector('#openNav').style.opacity = '0';
+        } else {
+            navbar.style.transition = 'transform 800ms';
+            navbar.style.transform = 'translateY(-80px)';
+            navEnd = '50px';
+        }
+
+        lastScroll = sT;
+    }
+}, false);
 
 var lCard = document.querySelector('.legalCard');
 var cCard = document.querySelector('.cookiesCard');
@@ -160,7 +230,7 @@ var cardOpenL = false;
 var cardOpenC = false;
 
 function legalOPen(card, cardBtn, boolean) {
-    alert('ERROR: "874AC"');
+    //alert('ERROR: "874AC"');
     if(nameFormDone) {
         card.style.top = navEnd;
         card.style.right = '0';

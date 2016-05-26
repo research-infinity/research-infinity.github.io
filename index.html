@@ -3,49 +3,34 @@
     <head>
         <title>infinity</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="ic_all_inclusive_black_48dp_2x.png" />
+        <link rel="icon" type="image/png" href="ic_all_inclusive_black_48dp_2x.png"/>
         <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body onload="loading()">
-        <div class="header" id="mainPage" style="background: #37368e">
+        <div class="header" id="mainPage" style="background: #37368e;">
             <div id="headPage">
                 <div class="square" id="js-square" style="text-align: center; line-height: 80px; font-size: 20px;" onclick="burstOPen()"><i class="material-icons" style="line-height: 60px; font-size: 35px;">&#xEB3D</i></div>
                 <h1 id="headText">infinity</h1>
             </div>
-            <!--<object id="headLogo" data="infinity.svg" type="image/svg+xml">
-                <img id="headLogoB" src="infinity.png" />
-            </object>
-            <object id="pillar0" data="pillarA0.svg" type="image/svg+xml">
-                <img id="pillar0B" src="pillar0.png" />
-            </object>
-            <object id="pillarI" data="pillar.svg" type="image/svg+xml">
-                <img id="pillarIB" src="pillarI.png" />
-            </object>
-            <object id="pillar1" data="pillarA0.svg" type="image/svg+xml">
-                <img id="pillar1B" src="pillarA.png" />
-            </object>
-            <h2 id="N-alefNum">0</h2>
-            <h2 id="O-alefNum">1</h2>-->
             <nav>
                 <div id="links">
                     <h1>infinity</h1>
                     <div id="histLink" onclick="histOPen()"><i class="material-icons"  id="histIcon">&#xE02F</i><p id="histText">History</p></div>
                     <div id="alefLink" class="disabled" onclick="alefOPen()"><i class="material-icons" id="alefIcon">א</i><p id="alefText">Alephs</p></div>
-                    <div id="paradoxLink" class="disabled" onclick=""><i class="material-icons" id="paradoxIcon">&#xE418</i><p id="paradoxText">Paradoxes</p></div>
+                    <div id="paradoxLink" class="disabled" onclick="paraOPen()"><i class="material-icons" id="paradoxIcon">&#xE418</i><p id="paradoxText">Paradoxes</p></div>
                     <div id="endLink" class="done disabled" onclick=""><i class="material-icons" id="endIcon">&#xE877</i><p id="endText">Done</p></div>
                     <button id="accountLink" class="usersName" onclick="nameTOggle(20)"></button>
                 </div>
                 <div id="titleBar">
                     <div class="hist" id="icon"><i class="material-icons">&#xE02F</i></div>
                     <div id="pgTitle">History</div>
-                    <div id="openNav" onclick="navbar.style.transform = 'translateY(0px)'; histPage.scrollTop = 0; histPage.scrollTo(0,0); document.querySelector('#openNav').style.opacity = '0';"><i class="material-icons">&#xE316</i></div>
+                    <div id="openNav" onclick="navbar.style.transform = 'translateY(0px)'; histPage.scrollTop = 0; document.querySelector('#openNav').style.opacity = '0';"><i class="material-icons">&#xE316</i></div>
                 </div>
                 <div class="nameCard"></div>
             </nav>
             <footer>
                 <a onclick="legalOPen(lCard, lBtn, cardOpenL)" id="legal"><i class="material-icons">&#xE90E</i></a>
-                <!--<a onclick="legalOPen(cCard, cBtn, cardOpenC)" id="cookies"><i class="material-icons">&#xE3A2</i></a>-->
                 <a target="_blank" href="http://ahgomes.github.io" id="ahgomes"><i class="material-icons">&#xE0BA</i></a>
             </footer>
             <div class="namePopUp">
@@ -53,25 +38,31 @@
                 <ul class="form">
                     <li id="firstName">
                         <input id="firstNameText" type="text" name="q1" placeholder="First Name" onkeypress="inputSwitch(event, nameInputs)" onfocus="inputCounter = 1; window.clearInterval(focus1);">
+                        <span class="jz"></span>
                     </li>
                     <li id="lastName">
                         <input id="lastNameText" type="text" name="q2" placeholder="Last Name" onkeypress="inputSwitch(event, nameInputs)" onfocus="inputCounter = 2;">
+                        <span class="jz"></span>
                     </li>
                     <li id="ID">
                         <input id="IDText" type="number" min="10234" max="187051" name="q3" placeholder="ID #" onkeypress="nameFormEnd(event)">
+                        <span class="jz"></span>
                     </li>
                     <li id="submitForm">
                         <button class="material-icons" id="submitF1" onclick="nameFormCLose();">&#xE154</button>
                     </li>
                 </ul>
             </div>
-            <!--<div class="other">
-                <h2>more</h2>
-            </div>-->
-            <div class="history" style="opacity: 0">
-                <h1>history of <span style="color: rgba(53, 52, 136, 0.79)">infinity</span></h1>
+            <div class="history" style="opacity: 0; right: 0">
+                <img class="img" src="History.png" alt="History" />
                 <div class="greekHist">
                     <h2 style="color: #fff;">Ancient Greece</h2>
+                    <br>
+                    <audio controls>
+                        <source src="Untitled.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <br>
                     <br>
                     <p>
                         The Greeks viewed infinity negatively. The word range from many different meanings: <i>unbound, indefinite, complex, total disorder, or undefined</i>.
@@ -89,10 +80,19 @@
                         Absolutely One, it has never known measure and stands outside of number, and so is under no limit either in regard to anything external or internal,
                         for any such determination would bring something of the dual into it. <i>- Plotinas</i>
                     </p>
+                    <img src="Greek.png" alt="" />
                 </div>
                 <div class="medievalHist">
                     <h2 style="color: #fff;">Medieval Europe</h2>
                     <br>
+                    <br>
+                    <audio controls>
+                        <source src="Untitled.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <br>
+                    <br>
+                    <img src="Castle.png" alt="" />
                     <p>
 
                     </p>
@@ -100,9 +100,17 @@
                 <div class="modernHist">
                     <h2 style="color: #fff;">Modern Mathematics</h2>
                     <br>
+                    <br>
+                    <audio controls>
+                        <source src="Untitled.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <br>
+                    <br>
                     <p>
 
                     </p>
+                    <img src="Modern.png" alt="" />
                 </div>
                 <div class="questionsHist">
                     <h2 style="color: #fff;">Questions</h2>
@@ -110,25 +118,75 @@
                     <ul class="">
                         <li id="">
                             <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
                         </li>
                         <li id="">
                             <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
                         </li>
                         <li id="">
                             <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
                         </li>
                         <li id="">
                             <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
                         </li>
                     </ul>
                     <button onclick="openAlefPage = true; alefOPen()"></button>
                 </div>
             </div>
-            <div class="alefSection" style="opacity: 0; right: -100%">
-                <h1>alephs</h1>
+            <div class="alefSection" style="right: -100%">
+                <img class="img" src="Alephs.png" alt="Alephs" />
+                <div class="questionsHist">
+                    <h2 style="color: #fff;">Questions</h2>
+                    <br>
+                    <ul class="">
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                    </ul>
+                    <button onclick="openParaPage = true; paraOPen()"></button>
+                </div>
             </div>
-            <div class="paradoxesSection" style="opacity: 0; right: 100%">
-                <h1>paradoxes</h1>
+            <div class="paradoxesSection" style="right: -100%">
+                <img class="img" src="Paradoxes.png" alt="Paradoxes" />
+                <div class="questionsHist">
+                    <h2 style="color: #fff;">Questions</h2>
+                    <br>
+                    <ul class="">
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                        <li id="">
+                            <input id="" type="text" name="q1" placeholder="" onkeypress="" onfocus="">
+                            <span class="jz"></span>
+                        </li>
+                    </ul>
+                    <!--<button onclick="openParaPage = true; paraOPen()"></button>-->
+                </div>
             </div>
             <div class="legalCard">
                 <h1>LEGAL</h1>
@@ -176,14 +234,7 @@
                      <br>
                 </p>
             </div>
-            <!--<div class="cookiesCard">
-                <h1>COOKIES</h1>
-                <br>
-                <div class="closeButtonC" onclick="legalCLose(cCard, cBtn, cardOpenC)"><i class="material-icons">&#xE5CD</i></div>
-                <p><br>
-                </p>
-            </div>-->
-            <script src="js/mo.js"></script>
+            <script src="js/animations.js"></script>
             <script src="js/main.js"></script>
             <script src="js/cookies.js"></script>
             <script src="js/forms.js"></script>
