@@ -550,7 +550,7 @@ The History of Infinity
     top: 0;
     height: 100vh;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     background: #f1f1f1;
     transition: opacity 1000ms 2000ms ease, right 2000ms ease;
     z-index: 0;
@@ -566,7 +566,7 @@ audio {
     height: 100vh;
     width: 100%;
     background: #f1f1f1;
-    overflow: scroll;
+    overflow-y: scroll;
     transition: right 2000ms ease;
     z-index: 100;
 }
@@ -586,7 +586,7 @@ audio {
     height: 100vh;
     width: 100%;
     background: #f1f1f1;
-    overflow: scroll;
+    overflow-y: scroll;
     transition: right 2000ms ease;
     z-index: 101;
 }
@@ -611,13 +611,13 @@ audio {
 }
 
 .greekHist {
-    padding: 100px 400px;
+    padding: 100px 200px 100px 200px;
     background: #71aaff;
     color: #000;
 }
 
 .medievalHist {
-    padding: 100px 400px;
+    padding: 100px 200px 100px 200px;
     background: #d53838;
     color: #000;
 }
@@ -633,14 +633,14 @@ audio {
 }
 
 .modernHist {
-    padding: 100px 400px;
+    padding: 100px 200px 100px 200px;
     background: #fcc82a;
     color: #000;
 }
 
 .questionsHist {
     margin: 0;
-    padding: 100px 400px;
+    padding: 100px 200px 100px 200px;
     background: #3e2887;
     color: #000;
 }
